@@ -1,0 +1,42 @@
+Log file created at: 2022/03/24 16:45:18
+Running on machine: ip-172-31-9-44
+Binary: Built with gc go1.17.7 for linux/amd64
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0324 16:45:18.230150    2426 out.go:297] Setting OutFile to fd 1 ...
+I0324 16:45:18.230236    2426 out.go:344] TERM=xterm,COLORTERM=, which probably does not support color
+I0324 16:45:18.230240    2426 out.go:310] Setting ErrFile to fd 2...
+I0324 16:45:18.230245    2426 out.go:344] TERM=xterm,COLORTERM=, which probably does not support color
+I0324 16:45:18.230360    2426 root.go:315] Updating PATH: /home/ubuntu/.minikube/bin
+W0324 16:45:18.230467    2426 root.go:293] Error reading config file at /home/ubuntu/.minikube/config/config.json: open /home/ubuntu/.minikube/config/config.json: no such file or directory
+I0324 16:45:18.230577    2426 out.go:304] Setting JSON to false
+I0324 16:45:18.231304    2426 start.go:112] hostinfo: {"hostname":"ip-172-31-9-44","uptime":170,"bootTime":1648140148,"procs":112,"os":"linux","platform":"ubuntu","platformFamily":"debian","platformVersion":"18.04","kernelVersion":"5.4.0-1069-aws","kernelArch":"x86_64","virtualizationSystem":"xen","virtualizationRole":"guest","hostId":"03382bd6-73dd-4d3f-9e0d-ab46ad13bdf0"}
+I0324 16:45:18.231395    2426 start.go:122] virtualization: xen guest
+I0324 16:45:18.234100    2426 out.go:176] * minikube v1.25.2 on Ubuntu 18.04 (xen/amd64)
+W0324 16:45:18.234322    2426 preload.go:295] Failed to list preload files: open /home/ubuntu/.minikube/cache/preloaded-tarball: no such file or directory
+I0324 16:45:18.234437    2426 driver.go:344] Setting default libvirt URI to qemu:///system
+I0324 16:45:18.234457    2426 global.go:111] Querying for installed drivers using PATH=/home/ubuntu/.minikube/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+I0324 16:45:18.234489    2426 global.go:119] podman default: true priority: 7, state: {Installed:false Healthy:false Running:false NeedsImprovement:false Error:exec: "podman": executable file not found in $PATH Reason: Fix:Install Podman Doc:https://minikube.sigs.k8s.io/docs/drivers/podman/ Version:}
+I0324 16:45:18.234506    2426 global.go:119] ssh default: false priority: 4, state: {Installed:true Healthy:true Running:false NeedsImprovement:false Error:<nil> Reason: Fix: Doc: Version:}
+I0324 16:45:18.234511    2426 notify.go:193] Checking for updates...
+I0324 16:45:18.234560    2426 global.go:119] virtualbox default: true priority: 6, state: {Installed:false Healthy:false Running:false NeedsImprovement:false Error:unable to find VBoxManage in $PATH Reason: Fix:Install VirtualBox Doc:https://minikube.sigs.k8s.io/docs/reference/drivers/virtualbox/ Version:}
+I0324 16:45:18.234595    2426 global.go:119] vmware default: true priority: 7, state: {Installed:false Healthy:false Running:false NeedsImprovement:false Error:exec: "docker-machine-driver-vmware": executable file not found in $PATH Reason: Fix:Install docker-machine-driver-vmware Doc:https://minikube.sigs.k8s.io/docs/reference/drivers/vmware/ Version:}
+W0324 16:45:18.279736    2426 docker.go:108] docker version returned error: exit status 1
+I0324 16:45:18.279769    2426 global.go:119] docker default: true priority: 9, state: {Installed:true Healthy:false Running:true NeedsImprovement:false Error:"docker version --format {{.Server.Os}}-{{.Server.Version}}" exit status 1: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get http://%2Fvar%2Frun%2Fdocker.sock/v1.24/version: dial unix /var/run/docker.sock: connect: permission denied Reason:PROVIDER_DOCKER_NEWGRP Fix:Add your user to the 'docker' group: 'sudo usermod -aG docker $USER && newgrp docker' Doc:https://docs.docker.com/engine/install/linux-postinstall/ Version:}
+I0324 16:45:18.279833    2426 global.go:119] kvm2 default: true priority: 8, state: {Installed:false Healthy:false Running:false NeedsImprovement:false Error:exec: "virsh": executable file not found in $PATH Reason: Fix:Install libvirt Doc:https://minikube.sigs.k8s.io/docs/reference/drivers/kvm2/ Version:}
+I0324 16:45:18.291354    2426 global.go:119] none default: false priority: 4, state: {Installed:true Healthy:true Running:false NeedsImprovement:false Error:<nil> Reason: Fix: Doc: Version:}
+I0324 16:45:18.291425    2426 driver.go:279] not recommending "none" due to default: false
+I0324 16:45:18.291432    2426 driver.go:279] not recommending "ssh" due to default: false
+I0324 16:45:18.291437    2426 driver.go:274] not recommending "docker" due to health: "docker version --format {{.Server.Os}}-{{.Server.Version}}" exit status 1: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get http://%2Fvar%2Frun%2Fdocker.sock/v1.24/version: dial unix /var/run/docker.sock: connect: permission denied
+I0324 16:45:18.291463    2426 driver.go:314] Picked: 
+I0324 16:45:18.291470    2426 driver.go:315] Alternatives: [none ssh]
+I0324 16:45:18.291476    2426 driver.go:316] Rejects: [virtualbox vmware docker kvm2 podman]
+I0324 16:45:18.294272    2426 out.go:176] * Unable to pick a default driver. Here is what was considered, in preference order:
+I0324 16:45:18.296355    2426 out.go:176]   - docker: Not healthy: "docker version --format {{.Server.Os}}-{{.Server.Version}}" exit status 1: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get http://%2Fvar%2Frun%2Fdocker.sock/v1.24/version: dial unix /var/run/docker.sock: connect: permission denied
+I0324 16:45:18.298570    2426 out.go:176]   - docker: Suggestion: Add your user to the 'docker' group: 'sudo usermod -aG docker $USER && newgrp docker' <https://docs.docker.com/engine/install/linux-postinstall/>
+I0324 16:45:18.300867    2426 out.go:176] * Alternatively you could install one of these drivers:
+I0324 16:45:18.302930    2426 out.go:176]   - kvm2: Not installed: exec: "virsh": executable file not found in $PATH
+I0324 16:45:18.308634    2426 out.go:176]   - vmware: Not installed: exec: "docker-machine-driver-vmware": executable file not found in $PATH
+I0324 16:45:18.312252    2426 out.go:176]   - podman: Not installed: exec: "podman": executable file not found in $PATH
+I0324 16:45:18.314561    2426 out.go:176]   - virtualbox: Not installed: unable to find VBoxManage in $PATH
+I0324 16:45:18.317582    2426 out.go:176] 
+W0324 16:45:18.317803    2426 out.go:241] X Exiting due to DRV_NOT_HEALTHY: Found driver(s) but none were healthy. See above for suggestions how to fix installed drivers.
